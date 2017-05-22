@@ -1,0 +1,514 @@
+MADNESS runtime initialized with 7 threads in the pool and affinity -1 -1 -1
+
+                 MPQC4: Massively Parallel Quantum Chemistry (v4)
+                                Version 4.0.0-alpha
+                 Revision 3d53a4096028fa30d5980650fd26cb999d88beab
+
+  Machine:          Darwin-16.5.0-x86_64
+  User:             mcclemen@Marjorys-MacBook-Pro.local
+  Start Time:       Mon May 22 02:57:18 2017 UTC
+  Default World:    1 MPI process
+
+  Input KeyVal (format=JSON):
+{
+    "property": {
+        "type": "Energy",
+        "wfn": "$:wfn",
+        "precision": "1.0e-11"
+    },
+    "units": "2010CODATA",
+    "molecule": {
+        "type": "Molecule",
+        "file_name": "benzene.xyz",
+        "sort_input": "true",
+        "charge": "0",
+        "n_cluster": "1"
+    },
+    "obs": {
+        "type": "Basis",
+        "name": "cc-pVDZ",
+        "molecule": "$:molecule"
+    },
+    "dfbs": {
+        "type": "Basis",
+        "name": "aug-cc-pVDZ-RI",
+        "molecule": "$:molecule"
+    },
+    "wfn_world": {
+        "type": "WfnWorld",
+        "molecule": "$:molecule",
+        "basis": "$:obs",
+        "df_basis": "$:dfbs"
+    },
+    "scf": {
+        "type": "RI-RHF",
+        "wfn_world": "$:wfn_world",
+        "localize": "true",
+        "localization_method": "boys-foster(valence)"
+    },
+    "wfn": {
+        "type": "CCSD",
+        "max_iter": "30",
+        "molecule": "$:molecule",
+        "wfn_world": "$:wfn_world",
+        "ref": "$:scf",
+        "method": "direct",
+        "frozen_core": "true",
+        "solver": "pno",
+        "pno_canonical": "true",
+        "tpno": "0",
+        "tosv": "1.0e-07",
+        "occ_block_size": "1",
+        "unocc_block_size": "1000000000"
+    }
+}
+
+  Using fundamental constants system 2010CODATA
+
+Constructing Basis Registry:
+OBS Basis = cc-pVDZ
+( tiles = [ 0, 1 ), elements = [ 0, 114 ) )
+Min and Max block size: 114 114
+Average: 114
+
+DF Basis = aug-cc-pVDZ-RI
+( tiles = [ 0, 1 ), elements = [ 0, 570 ) )
+Min and Max block size: 570 570
+Average: 570
+
+
+Constructing AOFactory:
+  Screen = none
+  Precision = 2.22044604925031e-16
+  Iterative inverse = false
+
+
+Constructing LCAOFactory:
+  Keep partial transform = false
+  Accurate time = false
+
+    Computed One Body Integral: < κ | λ > Size: 9.68277454376221e-05 GB Time: 0.002846497 s
+      Computed One Body Integral: < κ |V| λ > Size: 9.68277454376221e-05 GB Time: 0.03775654 s
+      Computed One Body Integral: < κ |T| λ > Size: 9.68277454376221e-05 GB Time: 0.002589636 s
+    Computed One Body Integral: < κ |H| λ > Size: 9.68277454376221e-05 GB Time: 0.000209498 s
+    Computed Twobody Two Center Integral: ( Κ |G| Λ ) Size: 0.00242069363594055 GB Time: 0.015352545 s
+    Computed Twobody Three Center Integral: ( Κ |G| κ λ ) Size: 0.0551918148994446 GB Time: 0.570744435 s
+overlap condition number = 16454.3941908206Starting SCF:
+	Threshold: 1e-13
+	Maximum number of iterations: 30
+iteration: 0
+	Energy: -230.606111327851
+	abs(Energy Change)/energy: 0.0183830501865953
+	(Gradient Norm)/n^2: 5.56702652148872e-05
+	Scf Time: 0.095273453
+		Density Time: 0.01106816
+		Fock Build Time: 0.081950489
+		DF Fock builder:
+			W time: 0.044987614
+			J time: 0.020333717
+			K time: 0.013725931
+			Total exchange time: 0.058713545
+iteration: 1
+	Energy: -230.709534477163
+	abs(Energy Change)/energy: 0.000448282943947184
+	(Gradient Norm)/n^2: 2.28172016621162e-05
+	Scf Time: 0.09795943
+		Density Time: 0.01136203
+		Fock Build Time: 0.085110942
+		DF Fock builder:
+			W time: 0.04368418
+			J time: 0.023272984
+			K time: 0.016000179
+			Total exchange time: 0.059684359
+iteration: 2
+	Energy: -230.725448786357
+	abs(Energy Change)/energy: 6.89750925932023e-05
+	(Gradient Norm)/n^2: 4.52938864386141e-06
+	Scf Time: 0.098515428
+		Density Time: 0.01071434
+		Fock Build Time: 0.086038999
+		DF Fock builder:
+			W time: 0.048146446
+			J time: 0.024420885
+			K time: 0.01139648
+			Total exchange time: 0.059542926
+iteration: 3
+	Energy: -230.726337765225
+	abs(Energy Change)/energy: 3.85295790930143e-06
+	(Gradient Norm)/n^2: 6.62552052646598e-07
+	Scf Time: 0.122189325
+		Density Time: 0.009452162
+		Fock Build Time: 0.111119379
+		DF Fock builder:
+			W time: 0.064055837
+			J time: 0.02950894
+			K time: 0.015808491
+			Total exchange time: 0.079864328
+iteration: 4
+	Energy: -230.726365810324
+	abs(Energy Change)/energy: 1.21551341935492e-07
+	(Gradient Norm)/n^2: 6.41769504677094e-08
+	Scf Time: 0.096084415
+		Density Time: 0.009730084
+		Fock Build Time: 0.084531819
+		DF Fock builder:
+			W time: 0.050621968
+			J time: 0.021281797
+			K time: 0.010905007
+			Total exchange time: 0.061526975
+iteration: 5
+	Energy: -230.726366237953
+	abs(Energy Change)/energy: 1.85340525197474e-09
+	(Gradient Norm)/n^2: 1.51633029359951e-08
+	Scf Time: 0.107396701
+		Density Time: 0.011318623
+		Fock Build Time: 0.094402592
+		DF Fock builder:
+			W time: 0.051487821
+			J time: 0.028138345
+			K time: 0.013043784
+			Total exchange time: 0.064531605
+iteration: 6
+	Energy: -230.726366258126
+	abs(Energy Change)/energy: 8.74320392141457e-11
+	(Gradient Norm)/n^2: 3.79335014449263e-09
+	Scf Time: 0.127278912
+		Density Time: 0.014402347
+		Fock Build Time: 0.110105008
+		DF Fock builder:
+			W time: 0.053450408
+			J time: 0.031164571
+			K time: 0.022408257
+			Total exchange time: 0.075858665
+iteration: 7
+	Energy: -230.726366258561
+	abs(Energy Change)/energy: 1.88199937319301e-12
+	(Gradient Norm)/n^2: 2.16105381757167e-09
+	Scf Time: 0.141124526
+		Density Time: 0.015358805
+		Fock Build Time: 0.12273326
+		DF Fock builder:
+			W time: 0.073762918
+			J time: 0.032498918
+			K time: 0.012320088
+			Total exchange time: 0.086083006
+iteration: 8
+	Energy: -230.726366258727
+	abs(Energy Change)/energy: 7.22841492465546e-13
+	(Gradient Norm)/n^2: 2.16058339818953e-10
+	Scf Time: 0.136979935
+		Density Time: 0.011974689
+		Fock Build Time: 0.120968967
+		DF Fock builder:
+			W time: 0.077213658
+			J time: 0.024208865
+			K time: 0.017225543
+			Total exchange time: 0.094439201
+iteration: 9
+	Energy: -230.726366258732
+	abs(Energy Change)/energy: 1.89702777504588e-14
+	(Gradient Norm)/n^2: 1.04046567195279e-10
+	Scf Time: 0.138048315
+		Density Time: 0.011559169
+		Fock Build Time: 0.124483145
+		DF Fock builder:
+			W time: 0.069654627
+			J time: 0.028449832
+			K time: 0.024503784
+			Total exchange time: 0.094158411
+iteration: 10
+	Energy: -230.726366258734
+	abs(Energy Change)/energy: 1.03474242275229e-14
+	(Gradient Norm)/n^2: 5.85414341035005e-11
+	Scf Time: 0.141926071
+		Density Time: 0.02173769
+		Fock Build Time: 0.117153805
+		DF Fock builder:
+			W time: 0.0685366
+			J time: 0.027710825
+			K time: 0.017053284
+			Total exchange time: 0.085589884
+iteration: 11
+	Energy: -230.726366258732
+	abs(Energy Change)/energy: 1.10865259580603e-14
+	(Gradient Norm)/n^2: 2.20805554048212e-11
+	Scf Time: 0.124982017
+		Density Time: 0.014739526
+		Fock Build Time: 0.107851201
+		DF Fock builder:
+			W time: 0.063964982
+			J time: 0.021609576
+			K time: 0.019039045
+			Total exchange time: 0.083004027
+iteration: 12
+	Energy: -230.726366258736
+	abs(Energy Change)/energy: 2.06948484550455e-14
+	(Gradient Norm)/n^2: 7.80206449473625e-12
+	Scf Time: 0.131044764
+		Density Time: 0.011110192
+		Fock Build Time: 0.117138751
+		DF Fock builder:
+			W time: 0.07314272
+			J time: 0.022605606
+			K time: 0.016699854
+			Total exchange time: 0.089842574
+iteration: 13
+	Energy: -230.726366258738
+	abs(Energy Change)/energy: 5.91281384429868e-15
+	(Gradient Norm)/n^2: 4.03448617030659e-12
+	Scf Time: 0.126487645
+		Density Time: 0.011695459
+		Fock Build Time: 0.113118497
+		DF Fock builder:
+			W time: 0.07250451
+			J time: 0.022990408
+			K time: 0.015711603
+			Total exchange time: 0.088216113
+iteration: 14
+	Energy: -230.726366258733
+	abs(Energy Change)/energy: 2.19266846726081e-14
+	(Gradient Norm)/n^2: 2.24558763467849e-12
+	Scf Time: 0.096586253
+		Density Time: 0.012124247
+		Fock Build Time: 0.082697452
+		DF Fock builder:
+			W time: 0.044175459
+			J time: 0.02369406
+			K time: 0.013181323
+			Total exchange time: 0.057356782
+iteration: 15
+	Energy: -230.726366258738
+	abs(Energy Change)/energy: 2.14339501855827e-14
+	(Gradient Norm)/n^2: 1.39822498454356e-12
+	Scf Time: 0.104478746
+		Density Time: 0.009411314
+		Fock Build Time: 0.093512717
+		DF Fock builder:
+			W time: 0.061432547
+			J time: 0.019958853
+			K time: 0.010419776
+			Total exchange time: 0.071852323
+iteration: 16
+	Energy: -230.726366258734
+	abs(Energy Change)/energy: 1.52747690977718e-14
+	(Gradient Norm)/n^2: 9.10567875789081e-13
+	Scf Time: 0.095238418
+		Density Time: 0.010309308
+		Fock Build Time: 0.083463523
+		DF Fock builder:
+			W time: 0.04621554
+			J time: 0.022843534
+			K time: 0.012778875
+			Total exchange time: 0.058994415
+iteration: 17
+	Energy: -230.726366258738
+	abs(Energy Change)/energy: 1.94630122374831e-14
+	(Gradient Norm)/n^2: 5.9692705934883e-13
+	Scf Time: 0.101023804
+		Density Time: 0.008703215
+		Fock Build Time: 0.09088325
+		DF Fock builder:
+			W time: 0.058852247
+			J time: 0.01920336
+			K time: 0.011113135
+			Total exchange time: 0.069965382
+iteration: 18
+	Energy: -230.726366258733
+	abs(Energy Change)/energy: 2.51294588382699e-14
+	(Gradient Norm)/n^2: 3.94710133748279e-13
+	Scf Time: 0.101903019
+		Density Time: 0.009685031
+		Fock Build Time: 0.090570053
+		DF Fock builder:
+			W time: 0.058956117
+			J time: 0.01811339
+			K time: 0.011770332
+			Total exchange time: 0.070726449
+iteration: 19
+	Energy: -230.726366258735
+	abs(Energy Change)/energy: 8.62285352293569e-15
+	(Gradient Norm)/n^2: 2.61200828418206e-13
+	Scf Time: 0.133843478
+		Density Time: 0.01818474
+		Fock Build Time: 0.114053084
+		DF Fock builder:
+			W time: 0.064075571
+			J time: 0.033898129
+			K time: 0.014136404
+			Total exchange time: 0.078211975
+iteration: 20
+	Energy: -230.726366258737
+	abs(Energy Change)/energy: 8.86922076644806e-15
+	(Gradient Norm)/n^2: 1.73612739107183e-13
+	Scf Time: 0.158752091
+		Density Time: 0.038157269
+		Fock Build Time: 0.118970133
+		DF Fock builder:
+			W time: 0.071726841
+			J time: 0.027130495
+			K time: 0.017940563
+			Total exchange time: 0.089667404
+iteration: 21
+	Energy: -230.726366258737
+	abs(Energy Change)/energy: 7.39101730537338e-16
+	(Gradient Norm)/n^2: 1.15560082513637e-13
+	Scf Time: 0.155354258
+		Density Time: 0.015972875
+		Fock Build Time: 0.136149201
+		DF Fock builder:
+			W time: 0.077820309
+			J time: 0.03033726
+			K time: 0.025099972
+			Total exchange time: 0.102920281
+iteration: 22
+	Energy: -230.726366258734
+	abs(Energy Change)/energy: 1.05937914710353e-14
+	(Gradient Norm)/n^2: 7.71720690198234e-14
+	Scf Time: 0.139612876
+		Density Time: 0.010620808
+		Fock Build Time: 0.127311285
+		DF Fock builder:
+			W time: 0.076696578
+			J time: 0.029035022
+			K time: 0.019711581
+			Total exchange time: 0.096408159
+  Frozen Core: 12 electrons
+    Retrieved AO Integral: < κ | λ > Size: 9.68277454376221e-05 GB
+    Computed One Body Integral: < κ | λ >[inv_sqr] Size: 9.68277454376221e-05 GB Time: 0.00260164 s
+    Inverse Square Root Time: 0.003801675 s
+      Retrieved AO Integral: < κ0 |F| κ1 >[df] Size: 9.68277454376221e-05 GB
+    Transformed LCAO Integral: < p |F| q >[df] Size: 9.68277454376221e-05 GB Time: 0.004401882 s
+    Retrieved LCAO Integral: < p |F| q >[df] Size: 9.68277454376221e-05 GB
+        Retrieved AO Integral: ( Κ |G| κ0 κ1 ) Size: 0.0551918148994446 GB
+      Transformed LCAO Integral: ( Κ |G| a i ) Size: 0.00592432916164398 GB Time: 0.351994073 s
+      Retrieved LCAO Integral: ( Κ |G| b j ) Size: 0.00592432916164398 GB
+      Computed Twobody Two Center Integral: ( Κ |G| Λ )[inv] Size: 0.00242069363594055 GB Time: 0.023057063 s
+      Inverse Time: 0.127420749 s
+    Transformed LCAO Integral: < a b |G| i j >[df] Size: 0.0144990161061287 GB Time: 0.057030917 s
+The average number of OSVs is 33
+The average number of PNOs is 93
+    Computed Direct Twobody Four Center Integral: ( μ ν |G| κ λ )[ab_ab] Size: 1.25837337970734 GB Time: 0.002962424 s
+    Computed Twobody Two Center Integral: ( Κ |G| Λ )[inv_sqr] Size: 0.00242069363594055 GB Time: 0.016690788 s
+    Inverse Square Root Time: 0.255513108 s
+      Retrieved AO Integral: ( Κ |G| κ0 κ1 ) Size: 0.0551918148994446 GB
+    Transformed LCAO Integral: ( Κ |G| a b ) Size: 0.0367308408021927 GB Time: 0.184468045 s
+    Retrieved AO Integral: ( Κ |G| Λ )[inv_sqr] Size: 0.00242069363594055 GB
+      Retrieved AO Integral: ( Κ |G| κ0 κ1 ) Size: 0.0551918148994446 GB
+    Transformed LCAO Integral: ( Κ |G| i j ) Size: 0.000955536961555481 GB Time: 0.294942825 s
+    Retrieved AO Integral: ( Κ |G| Λ )[inv_sqr] Size: 0.00242069363594055 GB
+    Retrieved LCAO Integral: ( Κ |G| a i ) Size: 0.00592432916164398 GB
+Use Direct CCSD Compute
+    Retrieved LCAO Integral: < a b |G| i j >[df] Size: 0.0144990161061287 GB
+      Retrieved AO Integral: < κ0 |F| κ1 >[df] Size: 9.68277454376221e-05 GB
+    Transformed LCAO Integral: < a |F| i >[df] Size: 1.03935599327087e-05 GB Time: 0.000739771 s
+      Retrieved AO Integral: < κ0 |F| κ1 >[df] Size: 9.68277454376221e-05 GB
+    Transformed LCAO Integral: < i |F| j >[df] Size: 1.67638063430786e-06 GB Time: 0.002198676 s
+      Retrieved AO Integral: < κ0 |F| κ1 >[df] Size: 9.68277454376221e-05 GB
+    Transformed LCAO Integral: < a |F| b >[df] Size: 6.44400715827942e-05 GB Time: 0.000458226 s
+      Retrieved LCAO Integral: ( Κ |G| i k ) Size: 0.000955536961555481 GB
+      Retrieved LCAO Integral: ( Κ |G| j l ) Size: 0.000955536961555481 GB
+      Retrieved AO Integral: ( Κ |G| Λ )[inv] Size: 0.00242069363594055 GB
+    Transformed LCAO Integral: < i j |G| k l >[df] Size: 0.000377185642719269 GB Time: 0.368764484 s
+      Retrieved LCAO Integral: ( Κ |G| i j ) Size: 0.000955536961555481 GB
+      Retrieved LCAO Integral: ( Κ |G| a b ) Size: 0.0367308408021927 GB
+      Retrieved AO Integral: ( Κ |G| Λ )[inv] Size: 0.00242069363594055 GB
+    Transformed LCAO Integral: < i a |G| j b >[df] Size: 0.0144990161061287 GB Time: 0.51484367 s
+      Permuted LCAO Integral: ( Κ |G| i a ) From ( Κ |G| a i ) Size: 0.00592432916164398 GB  Time: 0.000144171 s
+      Removed from Registry: ( Κ |G| a i )
+      Retrieved LCAO Integral: ( Κ |G| j k ) Size: 0.000955536961555481 GB
+      Retrieved AO Integral: ( Κ |G| Λ )[inv] Size: 0.00242069363594055 GB
+    Transformed LCAO Integral: < i j |G| a k >[df] Size: 0.00233855098485947 GB Time: 0.072142858 s
+    Permuted LCAO Integral: < i j |G| k a >[df] From < j i |G| a k >[df] Size: 0.00233855098485947 GB  Time: 0.010109538 s
+    Removed from Registry: < i j |G| a k >[df]
+Start Iteration
+Max Iteration: 30
+Target Precision: 1e-11
+AccurateTime: 0
+PrintDetail: 0
+  Printing size information for U_aaoo
+    Full     = 0.0233928 GB
+    Sparse   = 0.0233928 GB
+    Low Rank = 0 GB
+iter 	     deltaE 	   residual 	          energy 	   u time/s 	 total time/s
+  1 	 7.93012e-01 	 1.14096e-07 	 -0.793012391810 	       36.2 	       40.2
+  2 	 2.51237e-02 	 3.51888e-08 	 -0.818136079729 	       34.7 	       38.9
+  3 	 2.72470e-03 	 1.49615e-08 	 -0.820860779656 	       34.7 	       38.8
+  4 	 6.69204e-04 	 7.83191e-09 	 -0.821529983820 	       34.5 	       38.9
+  5 	 2.11772e-04 	 3.79040e-09 	 -0.821741755807 	       34.7 	       38.8
+  6 	 5.56869e-05 	 1.56429e-09 	 -0.821797442673 	       34.8 	       38.8
+  7 	 9.54342e-06 	 5.61511e-10 	 -0.821806986092 	       34.6 	       38.7
+  8 	 2.48169e-06 	 1.98823e-10 	 -0.821809467781 	       34.7 	       38.7
+  9 	 4.74049e-07 	 7.53086e-11 	 -0.821809941830 	       34.3 	       38.0
+ 10 	 5.65882e-08 	 3.03075e-11 	 -0.821809998418 	       32.7 	       36.6
+ 11 	 7.67836e-08 	 1.36198e-11 	 -0.821810075201 	       32.7 	       36.5
+ 12 	 6.89173e-09 	 7.05255e-12 	 -0.821810068310 	       34.6 	       38.9
+ 13 	 2.00987e-11 	 4.22709e-12 	 -0.821810068330 	       34.6 	       38.7
+ 14 	 8.24973e-10 	 2.54994e-12 	 -0.821810067505 	       34.9 	       39.0
+ 15 	 2.06483e-10 	 1.30279e-12 	 -0.821810067711 	       34.6 	       38.9
+ 16 	 8.52241e-10 	 6.02357e-13 	 -0.821810068564 	       34.9 	       39.0
+ 17 	 8.40621e-10 	 2.77619e-13 	 -0.821810069404 	       34.6 	       38.8
+ 18 	 8.99312e-10 	 9.92114e-14 	 -0.821810070303 	       34.7 	       38.7
+ 19 	 3.30441e-10 	 4.96781e-14 	 -0.821810070634 	       34.7 	       38.7
+ 20 	 2.06275e-10 	 2.48103e-14 	 -0.821810070840 	       33.5 	       37.9
+ 21 	 4.07099e-11 	 1.65515e-14 	 -0.821810070881 	       32.9 	       36.7
+ 22 	 1.55332e-11 	 1.11232e-14 	 -0.821810070896 	       32.9 	       36.7
+ 23 	 1.69881e-11 	 8.26417e-15 	 -0.821810070913 	       32.6 	       36.4
+ 24 	 1.32575e-11 	 6.43380e-15 	 -0.821810070927 	       32.8 	       36.7
+ 25 	 9.90441e-12 	 5.24625e-15 	 -0.821810070937 	       32.9 	       36.6
+CCSD Energy     -0.821810070936583
+  Output KeyVal (format=JSON):
+{
+    "property": {
+        "type": "Energy",
+        "wfn": "$:wfn",
+        "precision": "1.0e-11",
+        "value": {
+            "value": "-231.54817632967104"
+        }
+    },
+    "units": "2010CODATA",
+    "molecule": {
+        "type": "Molecule",
+        "file_name": "benzene.xyz",
+        "sort_input": "true",
+        "charge": "0",
+        "n_cluster": "1"
+    },
+    "obs": {
+        "type": "Basis",
+        "name": "cc-pVDZ",
+        "molecule": "$:molecule"
+    },
+    "dfbs": {
+        "type": "Basis",
+        "name": "aug-cc-pVDZ-RI",
+        "molecule": "$:molecule"
+    },
+    "wfn_world": {
+        "type": "WfnWorld",
+        "molecule": "$:molecule",
+        "basis": "$:obs",
+        "df_basis": "$:dfbs"
+    },
+    "scf": {
+        "type": "RI-RHF",
+        "wfn_world": "$:wfn_world",
+        "localize": "true",
+        "localization_method": "boys-foster(valence)"
+    },
+    "wfn": {
+        "type": "CCSD",
+        "max_iter": "30",
+        "molecule": "$:molecule",
+        "wfn_world": "$:wfn_world",
+        "ref": "$:scf",
+        "method": "direct",
+        "frozen_core": "true",
+        "solver": "pno",
+        "pno_canonical": "true",
+        "tpno": "0",
+        "tosv": "1.0e-07",
+        "occ_block_size": "1",
+        "unocc_block_size": "1000000000"
+    }
+}
